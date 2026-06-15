@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-eco-50 text-earth-900 antialiased transition-colors duration-300;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  html.dark body {
+    @apply bg-earth-950 text-earth-100;
+  }
+
+  /* Accessible focus indicator for keyboard navigation */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-eco-500 ring-offset-2 ring-offset-white rounded-md;
+  }
+  html.dark *:focus-visible {
+    @apply ring-offset-earth-950;
+  }
+}
+
+@layer components {
+  /* Glassmorphism card */
+  .glass {
+    @apply rounded-2xl border border-white/40 bg-white/70 shadow-glass backdrop-blur-lg;
+  }
+  html.dark .glass {
+    @apply border-white/10 bg-white/5 shadow-glass-lg;
+  }
+
+  .glass-strong {
+    @apply rounded-2xl border border-white/50 bg-white/85 shadow-glass backdrop-blur-xl;
+  }
+  html.dark .glass-strong {
+    @apply border-white/10 bg-earth-900/70 shadow-glass-lg;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-200 focus-visible:ring-2 focus-visible:ring-eco-500 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-eco-600 text-white shadow-lg shadow-eco-600/25 hover:bg-eco-700 hover:shadow-eco-700/30 active:scale-[0.98];
+  }
+  .btn-secondary {
+    @apply btn border border-eco-600/30 bg-white/60 text-eco-700 hover:bg-eco-50 active:scale-[0.98];
+  }
+  html.dark .btn-secondary {
+    @apply border-eco-400/30 bg-white/5 text-eco-300 hover:bg-white/10;
+  }
+  .btn-ghost {
+    @apply btn text-earth-700 hover:bg-eco-100/60;
+  }
+  html.dark .btn-ghost {
+    @apply text-earth-200 hover:bg-white/10;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-earth-200 bg-white/80 px-3.5 py-2.5 text-sm text-earth-900 placeholder:text-earth-400 transition-colors focus:border-eco-500 focus:outline-none focus:ring-2 focus:ring-eco-500/40;
+  }
+  html.dark .input {
+    @apply border-white/10 bg-white/5 text-earth-100 placeholder:text-earth-700/80;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-earth-700;
+  }
+  html.dark .label {
+    @apply text-earth-200;
+  }
+
+  .card-title {
+    @apply text-sm font-semibold uppercase tracking-wide text-earth-700;
+  }
+  html.dark .card-title {
+    @apply text-earth-200;
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden rounded-xl bg-earth-200/60;
+  }
+  html.dark .skeleton {
+    @apply bg-white/10;
+  }
+  .skeleton::after {
+    @apply absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/40 to-transparent;
+    content: '';
+  }
+}
+
+/* Leaflet container sizing */
+.leaflet-container {
+  @apply h-full w-full rounded-2xl;
+  background: #0b2e26;
+}
