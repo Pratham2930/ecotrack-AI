@@ -1,0 +1,41 @@
+export const mockUser = {
+  id: 'usr_001',
+  name: 'Aryan Sharma',
+  email: 'aryan.sharma@example.com',
+  avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=aryan&backgroundColor=b6e3f4',
+  location: 'Mumbai, India',
+  country: 'India',
+  joinDate: '2024-01-15',
+  ecoLevel: 7,
+  ecoLevelName: 'Sustainability Champion',
+  ecoPoints: 4280,
+  totalCO2Saved: 1240, // kg
+  carbonScore: 3.8,   // tonnes/year
+  sustainabilityScore: 82,
+  globalRank: 12847,
+  countryRank: 843,
+  currentStreak: 14,
+  longestStreak: 31,
+  completedChallenges: 23,
+  treesEquivalent: 62,
+  bio: 'Passionate about sustainability and green tech. Working to reduce my carbon footprint every day.',
+  preferences: {
+    theme: 'dark',
+    notifications: true,
+    emailReports: true,
+    weeklyDigest: true,
+    language: 'en',
+  },
+  achievements: [
+    { id: 'a1', name: 'Beginner Eco Hero', icon: '🌱', unlocked: true, date: '2024-01-20' },
+    { id: 'a2', name: 'Green Explorer', icon: '🌿', unlocked: true, date: '2024-02-10' },
+    { id: 'a3', name: 'Sustainability Champion', icon: '🏆', unlocked: true, date: '2024-03-05' },
+    { id: 'a4', name: 'Climate Guardian', icon: '🛡️', unlocked: false, date: null },
+    { id: 'a5', name: 'Earth Protector', icon: '🌍', unlocked: false, date: null },
+  ],
+  savedGoals: [
+    { id: 'g1', title: 'Reduce transport emissions by 20%', progress: 68, deadline: '2024-06-30' },
+    { id: 'g2', title: 'Go vegetarian 5 days/week', progress: 85, deadline: '2024-04-30' },
+    { id: 'g3', title: 'Zero single-use plastic for a month', progress: 42, deadline: '2024-05-15' },
+  ],
+}
